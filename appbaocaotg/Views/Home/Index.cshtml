@@ -52,24 +52,33 @@
                     <table class="table table-hover" id="patientTable">
                         <thead>
                             <tr class="text-center" style="background: linear-gradient(145deg, #f3f4f6, #0095d9);">
-                                <th scope="col" style="width: 5%; padding: 15px; color:#0d6efd !important;">STT</th>
-                                <th scope="col" style="width: 15%; padding: 15px; color:#0d6efd !important; ">MÃ BỆNH NHÂN</th>
-                                <th scope="col" style="width: 20%; padding: 15px; color:#0d6efd !important; ">TÊN BỆNH NHÂN</th>
-                                <th scope="col" style="width: 20%; padding: 15px; color:#0d6efd !important;">THỜI GIAN ĐĂNG KÝ</th>
-                                <th scope="col" style="width: 20%; padding: 15px; color:#0d6efd !important;">THỜI GIAN HOÀN TẤT (PHÚT) DỰ KIẾN</th>
+                                <th scope="col" style="width: 3%; padding: 10px; color:#0d6efd !important;">STT</th>
+                                <th scope="col" style="width: 5%; padding: 10px; color:#0d6efd !important;">TÊN BỆNH NHÂN</th>
+                                <th scope="col" style="width: 5%; padding: 10px; color:#0d6efd !important;">MÃ THẺ BH</th>
+                                <th scope="col" style="width: 3%; padding: 10px; color:#0d6efd !important;">TUỔI</th>
+                                <th scope="col" style="width: 5%; padding: 10px; color:#0d6efd !important;">CHẨN ĐOÁN</th>
+                                <th scope="col" style="width: 5%; padding: 10px; color:#0d6efd !important;">THỜI GIAN TIẾP NHẬN</th>
+                                <th scope="col" style="width: 5%; padding: 10px; color:#0d6efd !important;">THỜI GIAN BẮT ĐẦU KHÁM</th>
+                                <th scope="col" style="width: 5%; padding: 10px; color:#0d6efd !important;">THỜI GIAN CHỜ</th>
+                                <th scope="col" style="width: 5%; padding: 10px; color:#0d6efd !important;">KT CLS</th>
+                                <th scope="col" style="width: 5%; padding: 10px; color:#0d6efd !important;">KT CLS+XN</th
+                                <th scope="col" style="width: 5%; padding: 10px; color:#0d6efd !important;">KT CLS +XN + CDHA</th>
+                                <th scope="col" style="width: 5%; padding: 10px; color:#0d6efd !important;">KT CLS +XN + CDHA+ Thăm</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr class="text-center" style="transition: all 0.3s ease;">
-                                <td class="fw-bold" style="padding: 15px;">1</td>
-                                <td style="padding: 15px;">BN220073967</td>
-                                <td style="padding: 15px;">TRỊNH THỊ THỦY</td>
-                                <td style="padding: 15px;">03/01/2025 06:07</td>
-                         
-                                <td style="padding: 15px;">118</td>
+                                <td class="fw-bold" style="padding: 10px;">1</td>
+                                <td style="padding: 10px;">BN220073967</td>
+                                <td style="padding: 10px;">TRỊNH THỊ THỦY</td>
+                                <td style="padding: 10px;">03/01/2025 06:07</td>
+                                <td style="padding: 10px;">118</td>
+                                 <td style="padding: 10px;">118</td>
+                <td style="padding: 10px;">118</td>
                             </tr>
                         </tbody>
                     </table>
+                </div>
                     <div class="text-center mt-3" style="display: none;">
                         <button id="prevPage" class="btn btn-secondary me-2" >Trang trước</button>
                         <span id="pageInfo">Trang 1</span>
@@ -161,14 +170,22 @@
             tr.style.transition = 'all 0.3s ease';
             
             tr.innerHTML = `
-                <td class="fw-bold" style="padding: 15px;">${start + index + 1}</td>
-                <td style="padding: 15px;">${row['Mã bệnh nhân'] || ''}</td>
-                <td style="padding: 15px;">${row['Tên bệnh nhân'] || ''}</td>
-                <td style="padding: 15px;">${row['Thời gian đăng ký bệnh'] || ''}</td>
 
-                <td style="padding: 15px;">${row['Thời gian hoàn tất khám (phút)'] || ''}</td>
+                <td style="padding: 15px;">${row['STT'] || ''}</td>
+                <td style="padding: 15px;">${row['TÊN BỆNH NHÂN'] || ''}</td>
+                <td style="padding: 15px;">${row['MÃ THẺ BH'] || ''}</td>
+                <td style="padding: 15px;">${row['TUỔI'] || ''}</td>
+                <td style="padding: 15px;">${row['CHẨN ĐOÁN'] || ''}</td>
+                <td style="padding: 15px;">${row['THỜI GIAN TIẾP NHẬN'] || ''}</td>
+                <td style="padding: 15px;">${row['THỜI GIAN BẮT ĐẦU KHÁM'] || ''}</td>
+                <td style="padding: 15px;">${row['THỜI GIAN CHỜ'] || ''}</td>
+                <td style="padding: 15px;">${row['KT CLS'] || ''}</td>
+                <td style="padding: 15px;">${row['KT CLS+XN'] || ''}</td>
+                <td style="padding: 15px;">${row['KT CLS +XN + CDHA'] || ''}</td>
+                <td style="padding: 15px;">${row['KT CLS +XN + CDHA+ Thăm'] || ''}</td>
             `;
-            
+           
+
             tbody.appendChild(tr);
         });
 
@@ -256,7 +273,7 @@
     // Update current time every second
     setInterval(() => {
         document.getElementById('currentTime').textContent = new Date().toLocaleTimeString();
-    }, 1000);
+    }, 1000);s
 </script>
 
 @section Scripts {
